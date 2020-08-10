@@ -1,4 +1,4 @@
-import patients from './Clinic';
+import patients from './Clinic.js';
 
 const printToDom = (selector, textToPrint) => {
   const selectedDiv = document.querySelector(selector);
@@ -7,19 +7,19 @@ const printToDom = (selector, textToPrint) => {
 
 const patientList = () => {
   const getPatients = patients.usePatients()
-  console.log(getPatients);
+  console.log(getPatients.length);
   let domString = '';
   for (let i = 0; i < getPatients.length; i++) {
       domString += `
-      <section class="patient" id="patient--${patient.id}">
-        <h2 class="patient__name">${patient.name}</h2>
+      <section class="patient" id="patient--${getPatients[i].id}">
+        <h2 class="patient__name">${getPatients[i].firstName}</h2>
         <div class="patient__properties">
-          <p>Age: ${patient.age}</p>
-          <p>Temperature: ${patient.temperature}</p>
-          <p>Diagnosed: ${patient.diagnosed}</p>
+          <p>Age: ${getPatients[i].age}</p> 
+          <p>Temperature: ${getPatients[i].temperature}</p>
+          <p>Diagnosed: ${getPatients[i].diagnosed}</p>
         </div>
         <div class="patient_diagnosis">
-          Infected: ${patient.infected}
+          Infected: ${getPatients[i].infected}
         </div>
       </section>
       `;

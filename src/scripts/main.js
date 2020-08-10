@@ -1,7 +1,7 @@
 // Imports go first
 import testFacility from './TestFacility.js';
 import clinic from './Clinic.js';
-import PatientList from './PatientList';
+import patientList from './PatientList.js';
 
 
 // Test 5 people at the testing facility
@@ -20,8 +20,4 @@ mike = clinic.diagnose(mike, 11)
 
 
 // Invoke the component function that renders the HTML list of patients
-const init = () => {
-  PatientList.patientList();
-}
-
-init();
+patientList.patientList();
